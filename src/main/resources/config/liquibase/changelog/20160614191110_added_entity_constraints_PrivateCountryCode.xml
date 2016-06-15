@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity PrivateCountryCode.
+    -->
+    <changeSet id="20160614191110-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="master_country_code_id"
+                                 baseTableName="private_country_code"
+                                 constraintName="fk_privatecountrycode_mastercountrycode_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="master_country_code"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="private_country_code"
+                                 constraintName="fk_privatecountrycode_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+    </changeSet>
+</databaseChangeLog>

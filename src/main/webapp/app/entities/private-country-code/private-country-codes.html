@@ -1,0 +1,68 @@
+<div>
+    <h2>Private Country Codes for {{vm.account.login}}</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="private-country-code.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Private Country Code
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Start Date</span></th>
+                    <th><span>End Date</span></th>
+                    <th><span>Country Name</span></th>
+                    <th><span>Country Code</span></th>
+                    <th><span>Master Country Code</span></th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="privateCountryCode in vm.privateCountryCodes track by privateCountryCode.id">
+                    <td><a ui-sref="private-country-code-detail({id:privateCountryCode.id})">{{privateCountryCode.id}}</a></td>
+                    <td>{{privateCountryCode.startDate | date:'medium'}}</td>
+                    <td>{{privateCountryCode.endDate | date:'medium'}}</td>
+                    <td>{{privateCountryCode.countryName}}</td>
+                    <td>{{privateCountryCode.countryCode}}</td>
+                    <td>
+                        <a ui-sref="master-country-code-detail({id:privateCountryCode.masterCountryCode.id})">{{privateCountryCode.masterCountryCode.masterCountryCode}}</a>
+                    </td>
+
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="private-country-code-detail({id:privateCountryCode.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="private-country-code.edit({id:privateCountryCode.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="private-country-code.delete({id:privateCountryCode.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

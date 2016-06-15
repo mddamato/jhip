@@ -1,0 +1,12 @@
+version: '2'
+services:
+    countrycodelookup-postgresql:
+        container_name: countrycodelookup-postgresql
+        image: postgres:9.5.2
+        # volumes:
+        #     - ~/volumes/jhipster/CountryCodeLookup/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=CountryCodeLookup
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

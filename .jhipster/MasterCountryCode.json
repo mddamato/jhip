@@ -1,0 +1,18 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "masterCountryCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "masterCountryName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160614191244",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "master_country_code",
+    "pagination": "no"
+}

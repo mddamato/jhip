@@ -1,0 +1,9 @@
+{
+    "relationships": [],
+    "fields": [],
+    "changelogDate": "20160615125531",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "look_up_code",
+    "pagination": "no"
+}

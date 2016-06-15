@@ -1,0 +1,39 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "masterCountryCode",
+            "otherEntityName": "masterCountryCode",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "masterCountryCode"
+        },
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "countryName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "countryCode",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160614191110",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "private_country_code",
+    "pagination": "no"
+}
