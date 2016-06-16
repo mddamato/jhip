@@ -15,18 +15,21 @@
     </div>-->
     <br/>
     <div class="table-responsive">
-
-        <div class="form-group">
-            <label for="field_user">User</label>
-            <select class="form-control" id="field_user" name="user_login" ng-model="vm.lookUpCode.user" ng-options="user as user.login for user in vm.users track by user.id">
-                <option value=""></option>
-            </select>
-
-            <button type="submit" method="GET" class="btn btn-primary">
-                <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Submit</span>
-            </button>
-        </div>
-
+        <form ng-submit="vm.getUserCodes(vm.lookUpCode.user.login)">
+            <div class="form-group">
+                <label for="field_user">User</label>
+                <select class="form-control" id="field_user" name="user_login" ng-model="vm.lookUpCode.user" ng-options="user as user.login for user in vm.users track by user.id">
+                    <option value=""></option>
+                </select>
+                Hello {{vm.lookUpCode.user.login}}!
+                <button type="submit" name="{{vm.lookUpCode.user.login}}" class="btn btn-info btn-sm">
+                    <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Submit</span>
+                </button>
+                
+                <!--<button type="submit" method="GET" class="btn btn-primary">
+                </button>-->
+            </div>
+        </form>
         <table class="jh-table table table-striped">
             <thead>
                 <tr>
