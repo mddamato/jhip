@@ -138,12 +138,12 @@ public class LookUpCodeResource {
 
 
     /**
-     * GET  /look-up-codes/:user_login : get the list of private codes for user
+     * GET  /look-up-codes/user/:user_login : get the list of private codes for user
      *
      * @param user_login for the list of private country codes
      * @return the ResponseEntity with status 200 (OK) and with body the lookUpCode, or with status 404 (Not Found)
      */
-    @RequestMapping(value = "/look-up-codes/{user_login}",
+    @RequestMapping(value = "/look-up-codes/user/{user_login}",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
@@ -153,4 +153,4 @@ public class LookUpCodeResource {
         return privateCountryCodeRepository.findByUserLoginIsEqualTo(user_login);
     }
 
-}
+} 

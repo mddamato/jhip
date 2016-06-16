@@ -2,9 +2,11 @@
     'use strict';
     angular
         .module('countryCodeLookupApp')
-        .factory('LookUpCode', LookUpCode);
+        .factory('LookUpCode', LookUpCode)
+        .factory('LookUpUserCodes', LookUpUserCodes)
 
     LookUpCode.$inject = ['$resource'];
+    LookUpUserCodes.$inject = ['$resource'];
 
     function LookUpCode ($resource) {
         var resourceUrl =  'api/look-up-codes/:id';
@@ -21,6 +23,13 @@
                 }
             },
             'update': { method:'PUT' }
+        });
+    }
+
+    function LookUpUserCodes ($resource) {
+        var resourceUrl = "api/look-up-codes/user/:user_login";
+        return $resource(resourceUrl, {}, {
+            'codes': { method: 'GET', isArray: true}
         });
     }
 })();
