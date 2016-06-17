@@ -16,16 +16,18 @@
     <br/>
     <div class="table-responsive">
 
-        <div class="form-group">
-            <label for="field_user">User</label>
-            <select class="form-control" id="field_user" name="user_login" ng-model="vm.lookUpCode.user" ng-options="user as user.login for user in vm.users track by user.id">
-                <option value=""></option>
-            </select>
+        <form name="editForm" role="form" novalidate ng-submit="vm.save()">
+            <div class="form-group">
+                <label for="field_user">User</label>
+                <select class="form-control" id="field_user" name="user_login" ng-model="vm.lookUpCode.user" ng-options="user as user.login for user in vm.users track by user.id">
+                    <option value=""></option>
+                </select>
 
-            <button type="submit" method="GET" class="btn btn-primary">
-                <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Submit</span>
-            </button>
-        </div>
+                <button type="submit" class="btn btn-primary" ui-sref="look-up-code.list">
+                    <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Submit</span>
+                </button>
+            </div>
+        <form action=""></form>
 
         <table class="jh-table table table-striped">
             <thead>
