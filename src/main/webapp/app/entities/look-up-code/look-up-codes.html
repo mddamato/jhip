@@ -16,56 +16,47 @@
     <br/>
     <div class="table-responsive">
 
-        <form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+
+        <form name="editForm" role="form">
             <div class="form-group">
-                <label for="field_user">User</label>
-                <select class="form-control" id="field_user" name="user_login" ng-model="vm.lookUpCode.user" ng-options="user as user.login for user in vm.users track by user.id">
+                <label>Select An application:</label>
+                <select class="form-control" ng-model="vm.user_selection" ng-options="user as user.login for user in vm.users track by user.id">
                     <option value=""></option>
                 </select>
-
-                <button type="submit" class="btn btn-primary" ui-sref="look-up-code.list">
+                <button type="submit" class="btn btn-primary" ng-click="vm.getListOfPrivateCodes(vm.user_selection)")>
                     <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Submit</span>
                 </button>
             </div>
-        <form action=""></form>
+        </form>
+
+
+
+        <div> UserObject: {{vm.user_selection}} </div>
+
+        <div>info sent to function: {{vm.dummyVar}} </div>
+
+        <div>Here is my list: {{vm.privateCodesList}} </div>
+
+
+
 
         <table class="jh-table table table-striped">
             <thead>
                 <tr>
                     <th><span>ID</span></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="lookUpCode in vm.lookUpCodes track by lookUpCode.id">
-                    <td><a ui-sref="look-up-code-detail({id:lookUpCode.id})">{{lookUpCode.id}}</a></td>
-
-
-
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="look-up-code-detail({id:lookUpCode.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="look-up-code.edit({id:lookUpCode.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="look-up-code.delete({id:lookUpCode.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                        </div>
+                <tr ng-repeat="object in vm.privateCodesList track by object.id">
+                    <td>
+                        <a ui-sref="">{{vm.privateCodesList}}</a>
                     </td>
                 </tr>
             </tbody>
         </table>
+
+
+
     </div>
 </div>
