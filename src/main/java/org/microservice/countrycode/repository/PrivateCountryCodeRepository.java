@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Spring Data JPA repository for the PrivateCountryCode entity.
  */
+
 @SuppressWarnings("unused")
 public interface PrivateCountryCodeRepository extends JpaRepository<PrivateCountryCode,Long> {
 
