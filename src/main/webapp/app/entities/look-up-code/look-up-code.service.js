@@ -27,7 +27,6 @@
 
     function GetPrivateCodesForLogin($resource) {
         var resourceUrl =  'api/privateCountryCodeList/:login';
-        var params = {"login":"@login"};
         return $resource(resourceUrl, {},
         {
             'getPrivateCodesForLogin': { method: 'GET', isArray: true, },
