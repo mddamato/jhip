@@ -6,9 +6,9 @@
         .module('countryCodeLookupApp')
         .controller('LookUpCodeController', LookUpCodeController);
 
-    LookUpCodeController.$inject = ['$scope','$state','User','PrivateCountryCode'];
+    LookUpCodeController.$inject = ['$scope','$state','User','PrivateCountryCode','GetPrivateCodesForLogin'];
 
-    function LookUpCodeController ($scope,$state,User,PrivateCountryCode)
+    function LookUpCodeController ($scope,$state,User,PrivateCountryCode,GetPrivateCodesForLogin)
     {
         var vm = this;
 
@@ -18,11 +18,12 @@
         vm.user_selection;
         vm.getListOfPrivateCodes = getListOfPrivateCodesFunc;
         vm.dummyVar="start";
+        vm.user_selection;
 
         function getListOfPrivateCodesFunc()
         {
             vm.dummyVar=vm.user_selection;
-            vm.privateCodesList = GetPrivateCodesForLogin.getPrivateCodesForLogin(user_selection);
+            vm.privateCodesList = GetPrivateCodesForLogin.getPrivateCodesForLogin(vm.user_selection);
         }
     }
 })();
